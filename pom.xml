@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.nokia.mid.appl.boun</groupId>
+    <artifactId>bounce</artifactId>
+    <version>latest</version>
+    <packaging>jar</packaging>
+
+    <properties>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.freej2me</groupId>
+            <artifactId>freej2me</artifactId>
+            <version>1.0</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/runtime/freej2me.jar</systemPath>
+        </dependency>
+    </dependencies>
+    <build>
+    <plugins>
+    <plugin>
+      <artifactId>maven-jar-plugin</artifactId>
+        <configuration>
+            <archive>
+              <addMavenDescriptor>false</addMavenDescriptor>
+                <manifestEntries>
+                  <MIDlet-1>Bounce, /icons/icon.png, com.nokia.mid.appl.boun.Bounce</MIDlet-1>
+                  <MIDlet-Name>Bounce</MIDlet-Name>
+                  <MIDlet-Vendor>Nokia</MIDlet-Vendor>
+                  <MIDlet-Version>1.24</MIDlet-Version>
+                  <MicroEdition-Configuration>CLDC-1.0</MicroEdition-Configuration>
+                  <MicroEdition-Profile>MIDP-1.0</MicroEdition-Profile>
+                  <Nokia-MIDlet-Category>Game</Nokia-MIDlet-Category>
+                </manifestEntries>
+            </archive>
+        </configuration>
+    </plugin>
+    </plugins>
+    </build>
+        
+</project>
